@@ -19,4 +19,3 @@ No build or package installation is needed. Node.js must be available; the Windo
 YouTube buttons open clearly labeled topic searches, rather than unreviewed video recommendations. Technical reference links come from the notes.
 
 The diagrams are local SVG illustrations created for these lessons. All learning content and diagrams can load without external image or font services; the local server must stay running. External references and YouTube searches need internet access.
-
