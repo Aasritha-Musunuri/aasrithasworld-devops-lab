@@ -42,29 +42,13 @@ This is browser-side dynamic content on a static website. GitHub Pages does not 
 
 The URL above is a planned address, not confirmation of a deployed site.
 
-## Custom domain
+## Custom website path
 
-Your confirmed domain is **asymytric.com**. The proposed study hostname is **learn.asymytric.com**, so the main domain can remain independent. This hostname is not configured or live yet.
+The selected address is **https://asymytric.com/devops-learning/**. The main website is hosted through Hostinger Website Builder, and DNS is proxied through Cloudflare.
 
-If you prefer the study site at the bare domain `asymytric.com`, its existing DNS must be reviewed before replacing anything.
+Use the [Cloudflare path setup](cloudflare-route/README.md) to route only this path to GitHub Pages. Keep the existing DNS records. Leave GitHub Pages' Custom domain field empty for this arrangement.
 
-1. Verify domain ownership in your GitHub account using the TXT record GitHub supplies.
-2. Add the chosen hostname in the website repository's **Settings > Pages > Custom domain**.
-3. For a subdomain, add a DNS CNAME pointing to `aasritha-musunuri.github.io` (no repository path).
-4. For the bare/apex domain, use the A/AAAA or ALIAS/ANAME records in GitHub's current documentation instead of using a subdomain CNAME.
-5. Once DNS validation and certificate provisioning finish, enable **Enforce HTTPS**.
-
-For the proposed hostname, the DNS entry is:
-
-```text
-Type:   CNAME
-Name:   learn
-Target: aasritha-musunuri.github.io
-```
-
-Add `learn.asymytric.com` in GitHub Pages settings before adding this record. If DNS is managed through Cloudflare, start with the record set to DNS-only while GitHub validates the domain and issues its certificate.
-
-No domain has been configured by these files. Domain registration remains separate from hosting.
+The route code is prepared in `cloudflare-route/worker.mjs`; it has not been deployed to Cloudflare.
 
 ## Documentation
 
