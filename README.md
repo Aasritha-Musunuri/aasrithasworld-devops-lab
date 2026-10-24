@@ -1,5 +1,7 @@
 # Aasritha’s World — DevOps Lab
 
+[Open the website](https://aasritha-musunuri.github.io/aasrithasworld-devops-lab/)
+
 A visual reader for the [DevOps Learning Journey](https://github.com/Aasritha-Musunuri/Devops/tree/main/DevOps-Learning-Journey). Lesson Markdown stays in that repository; this repository contains the website code and illustrations.
 
 Run `start.cmd`, then open http://127.0.0.1:4173 for local preview. Local lessons are read from the adjacent `DevOps-Learning-Journey` folder, grouped under `Foundations/` and `Linux/`. New day folders belong inside their module folder.
