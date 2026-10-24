@@ -1,21 +1,11 @@
-# DevOps study reader
+# Aasritha’s World — DevOps Lab
 
-For the separate website repository, dynamic GitHub lesson connection, GitHub Pages workflow, and custom domain setup, see [HOSTING.md](HOSTING.md).
+A visual reader for the [DevOps Learning Journey](https://github.com/Aasritha-Musunuri/Devops/tree/main/DevOps-Learning-Journey). Lesson Markdown stays in that repository; this repository contains the website code and illustrations.
 
-Double-click `start.cmd`, leave the terminal running, and open **http://127.0.0.1:4173** in your browser. Press Ctrl+C in the terminal to stop the server.
+Run `start.cmd`, then open http://127.0.0.1:4173 for local preview. Local lessons are read from the adjacent `DevOps-Learning-Journey` folder, grouped under `Foundations/` and `Linux/`. New day folders belong inside their module folder.
 
-The reader loads all numbered day folders from `../DevOps-Learning-Journey`. Edit the Markdown notes as usual and reload the browser to see changes. New day folders appear automatically when they contain a README and numbered topic files.
+The reader includes light and dark themes, supplied topic diagrams, search, saved lessons, reading progress, and named previous/next lesson links. It does not require readers to upload images. Progress and bookmarks stay in the current browser.
 
-No build or package installation is needed. Node.js must be available; the Windows launcher also checks the existing bundled runtime on this computer.
+The hosted reader loads the latest public Markdown directly from GitHub. Added and removed lesson files are reflected on the next page load. The existing GitHub Pages deployment is retained so current website routes continue working.
 
-## Reading
-
-- Browse by day or search lesson titles and text.
-- Open a lesson for its full content, diagram, and section navigation.
-- Adjust text size and light/dark appearance.
-- Mark lessons as read to track your own progress.
-- Attach reference images to a lesson using **Add your image**. Images are saved in this browser's local storage, not uploaded or added to Git. Removing browser data removes them. Large image collections can exceed browser storage; keep the originals separately.
-
-YouTube buttons open clearly labeled topic searches, rather than unreviewed video recommendations. Technical reference links come from the notes.
-
-The diagrams are local SVG illustrations created for these lessons. All learning content and diagrams can load without external image or font services; the local server must stay running. External references and YouTube searches need internet access.
+Only the retired Asymytric integration is being removed. Preserve all `aasrithasworld.in` connections. See [DISCONNECT.md](DISCONNECT.md) and [HOSTING.md](HOSTING.md).

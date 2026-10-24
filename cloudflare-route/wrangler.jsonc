@@ -1,9 +1,0 @@
-{
-  "name": "asymytric-devops-path",
-  "main": "worker.mjs",
-  "compatibility_date": "2026-10-22",
-  "routes": [
-    {"pattern": "asymytric.com/devops-learning", "zone_name": "asymytric.com"},
-    {"pattern": "asymytric.com/devops-learning/*", "zone_name": "asymytric.com"}
-  ]
-}

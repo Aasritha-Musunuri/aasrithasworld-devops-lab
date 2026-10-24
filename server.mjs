@@ -5,9 +5,14 @@ import {fileURLToPath} from 'node:url';
 const root=path.dirname(fileURLToPath(import.meta.url));
 const notes=path.resolve(root,'../DevOps-Learning-Journey');
 export function lessons(){
- return fs.readdirSync(notes,{withFileTypes:true}).filter(x=>x.isDirectory()&&/^day-\d+/.test(x.name)).sort((a,b)=>a.name.localeCompare(b.name)).map(d=>{
- const folder=path.join(notes,d.name), readme=fs.readFileSync(path.join(folder,'README.md'),'utf8');
- return {id:d.name,number:Number(d.name.match(/day-(\d+)/)[1]),title:(readme.match(/^# (.*)/m)||[])[1]?.replace(/^Day \d+:\s*/, '')||d.name,
+ const folders=[];
+ for(const entry of fs.readdirSync(notes,{withFileTypes:true}).filter(x=>x.isDirectory())){
+  if(/^day-\d+/.test(entry.name))folders.push({name:entry.name,module:null,relative:entry.name});
+  else for(const day of fs.readdirSync(path.join(notes,entry.name),{withFileTypes:true}).filter(x=>x.isDirectory()&&/^day-\d+/.test(x.name)))folders.push({name:day.name,module:entry.name,relative:entry.name+'/'+day.name});
+ }
+ return folders.sort((a,b)=>Number(a.name.match(/day-(\d+)/)[1])-Number(b.name.match(/day-(\d+)/)[1])).map(d=>{
+ const folder=path.join(notes,d.relative), readme=fs.readFileSync(path.join(folder,'README.md'),'utf8');
+ return {id:d.name,path:d.relative,module:d.module||(readme.match(/^\*\*Module:\*\* (.+)$/m)||[])[1]?.trim(),number:Number(d.name.match(/day-(\d+)/)[1]),title:(readme.match(/^# (.*)/m)||[])[1]?.replace(/^Day \d+:\s*/, '')||d.name,
  topics:fs.readdirSync(folder).filter(f=>/^\d.*\.md$/.test(f)).sort().map(f=>{const content=fs.readFileSync(path.join(folder,f),'utf8');return {id:f,title:(content.match(/^# (.*)/m)||[])[1]||f,content};})};
  });
 }

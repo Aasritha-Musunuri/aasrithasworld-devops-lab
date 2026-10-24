@@ -1,4 +1,4 @@
-name: Publish study reader
+name: Publish DevOps Lab
 
 on:
   push:
