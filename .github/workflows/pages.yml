@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
 
 permissions:
   contents: read
@@ -23,6 +25,15 @@ jobs:
     steps:
       - name: Get website code
         uses: actions/checkout@v6
+      - name: Get the current learning notes
+        uses: actions/checkout@v6
+        with:
+          repository: Aasritha-Musunuri/Devops
+          ref: main
+          path: .lesson-source
+          persist-credentials: false
+      - name: Prepare lesson data for this deployment
+        run: node build-lessons.cjs .lesson-source/DevOps-Learning-Journey dist/lessons.json
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload website

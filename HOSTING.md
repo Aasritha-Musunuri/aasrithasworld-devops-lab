@@ -1,6 +1,6 @@
 # Website hosting
 
-The site is **Aasritha’s World — DevOps Lab**. GitHub Pages publishes the files in `dist/`; the public Markdown source is `Aasritha-Musunuri/Devops`, under `DevOps-Learning-Journey`.
+The site is **Aasritha’s World — DevOps Lab**. GitHub Pages publishes the files in `dist/`; the public Markdown source is `Aasritha-Musunuri/Devops`, under `DevOps-Learning-Journey`. The deployment checks out the current notes and runs `node build-lessons.cjs .lesson-source/DevOps-Learning-Journey dist/lessons.json`. The generated JSON is part of the Pages artifact, not a second editable copy of the notes.
 
 Keep the existing Pages deployment and all `aasrithasworld.in` DNS records and Worker routes intact. The workflow deploys the reviewed website code and does not manage Cloudflare routes.
 
